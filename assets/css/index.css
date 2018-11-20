@@ -1,76 +1,79 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-color: rgb(7, 19, 16);
 }
 /*Grid Main*/
 .box-main {
+  background-color: rgb(34, 67, 60);
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20px, 20px));
+  grid-template-rows: repeat(auto-fit, minmax(20px, 20px));
+
 }
 
-div:nth-child(2n) {
-  display: flex;
-  justify-content: center;
-  background-color: black;
-  grid-row-end: 1 span;
-  grid-column-end: 1 span;
-}
-
-div:nth-child(5n) {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(188, 188, 188);
-  grid-row-end: 0.5 span;
-  grid-column-end: 0.5 span;
-}
-
-div:nth-child(7n) {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(240, 240, 240);
-  grid-row-end: 2 span;
-  grid-column-end: 2 span;
-}
-
-/*Flip Box*/
-.box-sight {
+.box-transparent {
   background-color: transparent;
-  perspective: 1000px;
+  perspective: 100px;
+  border: 1px solid rgb(103, 190, 177);
   width: 100%;
   height: 100%;
 }
 
-/*Flip Box Inner*/
-.box-first-sight {
+.box-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 1.5s;
+  transition: transform 180s;
   transform-style: preserve-3d;
 }
 
-/*Flip Box Hover*/
-.box-sight:hover .box-first-sight {
+.box-transparent:hover .box-inner {
   transform: rotateX(180deg);
+  transition-duration: 0.1ms;
+  transition-delay: 0.1ms;
 }
 
-.box-front-part, .box-back-part {
+.box-back-part, .box-front-part {
   position: absolute;
   backface-visibility: hidden;
   width: 100%;
   height: 100%;
 }
+/*Blue*/
+.box-back-part {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(103, 190, 177);
+  grid-row-end: 1 span;
+  grid-column-end: 1 span;
+}
 
 .box-front-part {
   width: 100%;
   height: 100%;
+  background-color:rgb(182, 208, 203);
+  grid-row-end: 1 span;
+  grid-column-end: 1 span;
 }
 
-.box-back-part {
-  width: 100%;
-  height: 100%;
+div:nth-child(7n) {
+  background-color: rgb(7, 19, 16);
 }
+
+div:nth-child(11n) {
+  background-color: rgb(103, 190, 177);
+}
+
+div:nth-child(5n) {
+  background-color: rgb(182, 208, 203);
+}
+
+
+
+
+
+
 
